@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.view.snp.makeConstraints { (make) in
+            make.edges.equalTo(view.superview!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
